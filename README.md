@@ -174,6 +174,15 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ######resetting password for root
 ```
 ```
+#####modify process execution priorities
+######using nice
+```
+nice -n 5 sleep 1005
+```
+######renice
+```
+renice -n 10 -p 1234
+```
 
 #####create partitions and file systems
 ######format
