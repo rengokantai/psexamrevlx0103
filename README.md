@@ -175,9 +175,117 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 ```
 
-######process text streams using filters
+#####use rpm yum
+######lets get 
+```
+rpm -qa
+```
+```
+rpm -qpR name   //show dependencies
+```
+```
+rpm -qpi name   //show info
+```
+```
+rpm -qpl name   //show content
+```
+```
+rpm -F  (only update) not -U
+```
+```
+rpm -K  //check signature
+```
+```
+rpm -qf /etc/hosts.allow  //list home allow
+```
+######yum
+```
+cat /etc/yum.conf
+```
+```
+yum repolist
+yum provides /etc/hosts.allow
+```
+######downloading and extract
+```
+yum repolist
+yum list installed
+```
+extract rpm
+```
+rpm2cpio file.rpm>z.cpio
+cpio -id <z.cpio
+```
+######using yumdownloader
+```
+yumdownloader zsh --resolve
+rpm2cpio x.rpm >z.cpio
+```
 
 
+#####work on command line
+######build in commands
+```
+pwd      // soft link location  (bin)
+./pwd   //original location   (/user/bin)
+```
+######working with var
+```
+var=1
+export var
+unset var 
+```
+delete duplicated records
+
+```
+HISTCONTROL=erasedups
+```
+file in
+```
+~/.bash_history
+```
+
+!v rerun last command
+######display shell options
+```
+set  //var and func
+set -o //display shell options
+set -o allexport //turn on an option
+set +o allexport //turn off
+#####process text streams using filters
+######
+```
+tabs 4
+expand ft>fs  //expand tab to spaces
+upexpand -a fs>ft convert back
+```
+show octal
+```
+od c   //octal dumps
+od -b ft  //octal bytes
+od -a ft    //text
+od -x ft    //hex
+```
+######sqeeze
+```
+format /etc/x
+pr filename
+```
+######join 
+ctrl a gp to start of line
+```
+join file1 file2
+```
+```
+sort -t':' -n -k 3
+```
+```
+split -l 100 filename
+```
+######tr
+```
+tr [a-z][A-Z]
+```
 #####perform basic file
 ######file copies delections
 ```
