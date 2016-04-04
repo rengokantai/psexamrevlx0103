@@ -174,6 +174,44 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ######resetting password for root
 ```
 ```
+#####manage shared libraries
+######displaying library
+```
+ldd /bin/ls
+```
+```
+ldconfig -p  ->/sbin/config
+```
+
+
+#####debian package management
+######managing software with dpkg
+```
+dpkg -L file  //list file
+dpkg -S /bin/zsh   //list
+dpkg -P file //remove
+```
+######implementing
+```
+/etc/apt/sources.list
+```
+```
+apt-get search zsh
+apt-get purge zsh
+apt-get autoremove
+apt-get dist-upgrade
+```
+######
+```
+aptitute
+aptitude search 'zsh.*'
+
+
+
+
+
+
+
 
 #####use rpm yum
 ######lets get 
