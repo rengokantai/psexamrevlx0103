@@ -174,6 +174,83 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ######resetting password for root
 ```
 ```
+
+######process text streams using filters
+
+
+#####perform basic file
+######file copies delections
+```
+cp -u old new   //only copy when newer
+cp -i iteractive mode
+```
+######summary
+copy output
+```
+find /var/log -type f -mtime +1 |cpio -o >log.cpio
+```
+
+
+#####use streams pipes
+######howto redirection
+```
+strace ls -l
+```
+
+######pipelines, arguments
+standard input
+```
+apio -id --absolute-filenames < ../filename
+while read H; do ping -c3 $H; done<x.txt
+```
+
+
+
+
+
+
+
+
+
+#####create monitor
+######managing process
+```
+sleep 3  (ctrl z to bg)
+fg 1 
+bg  (return)
+jobs
+```
+
+######using screen
+```
+screen sleep 100
+ctrl+a d   //exit
+screen -ls
+screen -r id      //(retach)
+scrren -S easyname
+```
+######using ps
+```
+ps aux  (BSD style without dash)
+ps -l 
+ps -f
+```
+```
+sleep 1000&
+pgrep sleep
+pkill sleep
+killall -u bob
+```
+
+
+
+
+
+
+
+
+
+
 #####modify process execution priorities
 ######using nice
 ```
